@@ -13,6 +13,5 @@ class LetterFunApp : Application() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
-        Timber.d("Hello, World!")
     }
 }

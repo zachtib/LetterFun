@@ -32,5 +32,9 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             findNavController()
                 .navigate(R.id.action_homeFragment_to_numbersFragment)
         }
+        binding.emojiButton.setOnClickListener {
+            findNavController()
+                .navigate(R.id.action_homeFragment_to_emojiFragment)
+        }
     }
 }

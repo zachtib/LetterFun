@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_numbersFragment"
             app:destination="@id/numbersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_emojiFragment"
+            app:destination="@id/emojiFragment" />
     </fragment>
     <fragment
         android:id="@+id/lettersFragment"
@@ -29,4 +32,8 @@
         android:id="@+id/numbersFragment"
         android:name="com.zachtib.letterfun.ui.numbers.NumbersFragment"
         android:label="NumbersFragment" />
+    <fragment
+        android:id="@+id/emojiFragment"
+        android:name="com.zachtib.letterfun.ui.emoji.EmojiFragment"
+        android:label="EmojiFragment" />
 </navigation>
