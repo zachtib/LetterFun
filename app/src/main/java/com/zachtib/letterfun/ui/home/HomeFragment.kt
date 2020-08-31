@@ -29,6 +29,8 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             findNavController().navigate(action)
         }
         binding.numbersButton.setOnClickListener {
+            findNavController()
+                .navigate(R.id.action_homeFragment_to_numbersFragment)
         }
     }
 }

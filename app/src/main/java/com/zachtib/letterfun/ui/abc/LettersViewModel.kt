@@ -2,14 +2,15 @@ package com.zachtib.letterfun.ui.abc
 
 import androidx.lifecycle.ViewModel
 import com.zachtib.letterfun.Letters
+import com.zachtib.letterfun.ui.FlashCardViewState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import timber.log.Timber
 
 class LettersViewModel : ViewModel() {
-    private val _state = MutableStateFlow<LetterViewState>(LetterViewState.Initializing)
+    private val _state = MutableStateFlow<FlashCardViewState>(FlashCardViewState.Initializing)
 
-    val state: StateFlow<LetterViewState> = _state
+    val state: StateFlow<FlashCardViewState> = _state
 
     private var letterSet: List<String> = listOf()
     private var isRandom: Boolean = false
@@ -27,7 +28,7 @@ class LettersViewModel : ViewModel() {
             displayRandomCharacter()
         } else {
             currentIndex = 0
-            this._state.value = LetterViewState.Displaying(letterSet.first())
+            this._state.value = FlashCardViewState.Displaying(letterSet.first())
         }
     }
 
@@ -45,7 +46,7 @@ class LettersViewModel : ViewModel() {
             if (currentIndex >= letterSet.size) {
                 currentIndex %= letterSet.size
             }
-            this._state.value = LetterViewState.Displaying(letterSet[currentIndex])
+            this._state.value = FlashCardViewState.Displaying(letterSet[currentIndex])
         } else {
             Timber.w("letterSet was empty!")
         }
@@ -53,7 +54,7 @@ class LettersViewModel : ViewModel() {
 
     private fun displayRandomCharacter() {
         if (letterSet.isNotEmpty()) {
-            this._state.value = LetterViewState.Displaying(letterSet.random())
+            this._state.value = FlashCardViewState.Displaying(letterSet.random())
         } else {
             Timber.w("letterSet was empty!")
         }

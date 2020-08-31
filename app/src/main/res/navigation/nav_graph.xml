@@ -10,6 +10,9 @@
         <action
             android:id="@+id/action_homeFragment_to_lettersFragment"
             app:destination="@id/lettersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_numbersFragment"
+            app:destination="@id/numbersFragment" />
     </fragment>
     <fragment
         android:id="@+id/lettersFragment"
@@ -22,4 +25,8 @@
             android:name="isRandom"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/numbersFragment"
+        android:name="com.zachtib.letterfun.ui.numbers.NumbersFragment"
+        android:label="NumbersFragment" />
 </navigation>

@@ -1,9 +1,8 @@
-package com.zachtib.letterfun.ui.abc
+package com.zachtib.letterfun.ui.numbers
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.navArgs
 import com.zachtib.letterfun.R
 import com.zachtib.letterfun.databinding.FlashcardFragmentBinding
 import com.zachtib.letterfun.ui.FlashCardViewState
@@ -13,16 +12,14 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class LettersFragment : Fragment(R.layout.flashcard_fragment) {
+class NumbersFragment : Fragment(R.layout.flashcard_fragment) {
+    private val viewModel by viewModels<NumbersViewModel>()
     private val binding by viewBinding(FlashcardFragmentBinding::bind)
-    private val viewModel by viewModels<LettersViewModel>()
-    private val args by navArgs<LettersFragmentArgs>()
-
 
     override fun onStart() {
         super.onStart()
 
-        viewModel.start(args.isUpperCase, args.isRandom)
+        viewModel.start(true, 20, false)
 
         binding.root.setOnClickListener {
             viewModel.onScreenTapped()
