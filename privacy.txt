@@ -1,0 +1,6 @@
+I don't store your data, period.
+
+This app runs entirely offline. I made it for my kid, and I don't want anyone
+tracking him, either. There are no third party SDKs, analytics tools, or even
+bug reporting libraries in this application. There are no ads, and the app
+doesn't even request the internet permission.
